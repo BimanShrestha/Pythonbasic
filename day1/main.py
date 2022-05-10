@@ -8,10 +8,19 @@ class Employee:
         Employee.no_of_employee +=1
     def increase(self):
         self.salary=self.salary *Employee.increment
-print(Employee.no_of_employee)
+    @classmethod
+    def change_increment(cls,amount):
+     cls.increment =amount
+
+
+#print(Employee.no_of_employee)
 ram = Employee('ram','bahadur', 44000)
 sam = Employee('sam','bahadur', 44000)
-print(Employee.no_of_employee)
+print(ram.salary)
+Employee.change_increment(2)
+ram.increase()
+print(ram.salary)
+#print(Employee.no_of_employee)
 #print(ram.fname, sam.fname)
 #print(Employee.__dict__)
 #print(ram.__dict__)
