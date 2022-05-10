@@ -11,11 +11,17 @@ class Employee:
     @classmethod
     def change_increment(cls,amount):
      cls.increment =amount
+    @classmethod
+    def from_str(cls,emp_string):
+        fname,lname,salary =emp_string.split("-")
+        return cls(fname, lname, salary)
 
 
 #print(Employee.no_of_employee)
 ram = Employee('ram','bahadur', 44000)
 sam = Employee('sam','bahadur', 44000)
+hari = Employee.from_str("hari-bahadur-76000")
+print(hari.lname)
 print(ram.salary)
 Employee.change_increment(2)
 ram.increase()
